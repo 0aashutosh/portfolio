@@ -1,59 +1,65 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
 }
-header{
-    height:100vh;
+
+header {
+    height: 100vh;
     width: 100%;
-    background: url("background.png") no-repeat;
-    background-position: center;
+    background: url("background.png") no-repeat center center/cover;
 }
-header nav{
+
+header nav {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 2000;
-    
+    background: rgba(255, 255, 255, 0.8);
 }
-nav .navbar{
+
+.navbar {
     width: 90%;
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px auto 20px auto;
+    margin: 20px auto;
 }
-.navbar .logo{
+
+.logo {
     height: 80px;
     width: 150px;
-    object-fit: contain;
 }
-.navbar .menu{
+
+.menu {
     display: flex;
 }
-.navbar .menu li{
+
+.menu li {
     list-style: none;
     margin: 0 10px;
 }
-.menu li a{
+
+.menu li a {
     font-size: 17px;
     color: #2c3e50;
     font-weight: 500;
     text-decoration: none;
 }
-.menu li a:hover{
+
+.menu li a:hover {
     color: #000;
 }
-.navbar  .search-box{
+
+.search-box {
     position: relative;
     height: 50px;
     width: 250px;
 }
-.search-box input[type="text"]{
-    position: absolute;
-    left: 0;
-    top: 0;
+
+.search-box input[type="text"] {
     height: 100%;
     width: 100%;
     color: #2c3e50;
@@ -63,111 +69,170 @@ nav .navbar{
     border-radius: 8px;
     padding: 0 10px 0 40px;
 }
-.search-box a{
+
+.search-box a {
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
     color: #2c3e50;
-    padding: 0 5px 0 0;
     border-right: 2px solid #2c3e50;
-
 }
-.content{
+
+.content {
     position: absolute;
     top: 33%;
     left: 7%;
-    z-index: 10|Uu;
+    z-index: 10;
 }
-.content .text{
+
+.text {
     font-size: 27px;
     color: #2c3e50;
 }
-.content .name{
+
+.name {
     font-size: 75px;
     color: #2c3e50;
     margin: -20px 0 0 -3px;
 }
-.content .job{
+
+.job {
     font-size: 40px;
     color: #2c3e50;
     display: flex;
 }
-.content .job .typing-text{
+
+.typing-text {
     color: #1de2d1;
     margin-left: 10px;
     white-space: nowrap;
     overflow: hidden;
     border-right: 4px solid #1de2d1;
-    /* background: red; */
     animation: typing 5s steps(15) infinite;
 }
+
 @keyframes typing {
-    0%{
+    0% {
         width: 0ch;
     }
-    50%{
+    50% {
         width: 15ch;
     }
-    100%{
+    100% {
         width: 0ch;
     }
 }
-.content .buttons{
+
+.buttons {
     margin: 20px 0 0 50px;
 }
-.content .buttons button{
+
+.buttons button {
     color: #fff;
     margin: 0 10px;
-    padding: 8px 6px;
+    padding: 8px 16px;
     font-size: 18px;
     cursor: pointer;
     border-radius: 6px;
     outline: none;
     border: none;
-    background: linear-gradient(135deg,#2afadf 10%, #c346c2 100%);
+    background: linear-gradient(135deg, #2afadf 10%, #c346c2 100%);
     transition: all 0.3s ease;
 }
-.buttons button a{
+
+.buttons button a {
     color: #fff;
-    margin: 0 10px;
-    padding: 8px 6px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 6px;
-    outline: none;
-    border: none;
-    background: linear-gradient(135deg,#2afadf 10%, #c346c2 100%);
-    transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.content .buttons button:hover{
+.buttons button:hover {
     transform: scale(0.98);
 }
-header .boy img{
+
+.boy img {
     position: absolute;
     right: 80px;
     bottom: 0;
     height: 95%;
-    
 }
-header .media-icons{
+
+.media-icons {
     position: absolute;
     right: 40px;
     bottom: 40px;
     display: flex;
     flex-direction: column;
 }
-.media-icons a{
-    margin-left: 8px 0;
+
+.media-icons a {
+    margin: 8px 0;
     font-size: 20px;
     color: #2c3e50;
-    font-weight: 500;
     opacity: 0.7;
     transition: all 0.3s ease;
 }
-.media-icons a:hover{
+
+.media-icons a:hover {
     opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .content {
+        top: 25%;
+        left: 5%;
+    }
+    .name {
+        font-size: 60px;
+    }
+    .job {
+        font-size: 30px;
+    }
+    .boy img {
+        height: 70%;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .search-box {
+        width: 200px;
+    }
+    .content {
+        left: 10%;
+    }
+    .name {
+        font-size: 50px;
+    }
+    .boy img {
+        height: 50%;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        width: 150px;
+    }
+    .content {
+        left: 5%;
+    }
+    .name {
+        font-size: 40px;
+    }
+    .job {
+        font-size: 20px;
+    }
+    .boy img {
+        height: 40%;
+        right: 5px;
+    }
 }
